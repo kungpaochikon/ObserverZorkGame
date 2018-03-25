@@ -1,3 +1,4 @@
+#Author: Gary Fleming
 from Neighborhood import Neighborhood;
 from Player import Player;
 import sys;
@@ -20,15 +21,19 @@ class Game(Observer):
         print("Welcome to ZorkGame!");
 
         while(self.running):
+            print("");
             self.displayMap();
+            print("");
             print("You are at X:"+str(self.x)+", Y:"+str(self.y));
             print(str(self.monsterCount) + " Monsters Remain in Total!");
             print("You have "+str(self.player.getHP())+" HP Remaining!");
+            print("");
             print("Choices:\n"
                   "1.) Combat\n"
                   "2.) Move\n"
                   "3.) House Details\n"
                   "4.) Quit\n");
+            print("");
             choice = -1;
             try:
                 choice = int(input("?: "));
@@ -52,7 +57,8 @@ class Game(Observer):
                 damage = self.player.getDamage();
                 damage *= self.player.getInv()[slot].getMod();
                 damage = round(damage,2);
-                print("DAMAGE: "+str(damage));
+                print("");
+                print("You swung for : "+str(damage)+" Damage!!!");
                 myDmg = self.nbh.attackHome(self.x,self.y,damage,self.player.getInv()[slot].getTitle());
                 self.player.modInv(slot,-1);
                 self.player.updateInv();
@@ -81,8 +87,9 @@ class Game(Observer):
                     continue;
                 self.x = choiceX;
                 self.y = choiceY;
-                
+            #Display Monsters
             elif(choice==3):
+                print("");
                 self.nbh.printHomeDetails(self.x,self.y);
             #Quit Game
             elif(choice==4):

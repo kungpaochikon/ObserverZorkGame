@@ -1,3 +1,4 @@
+#Author: Gary Fleming
 from Actor import Actor;
 import random;
 from Weapon import HersheyKiss,SourStraw,ChocolateBar,NerdBomb;

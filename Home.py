@@ -1,3 +1,4 @@
+#Author: Gary Fleming
 import random;
 from Obs import Observer, Observable;
 from NPC import Person, Zombie, Vampire, Ghoul, Werewolf;
@@ -37,12 +38,12 @@ class Home(Observable, Observer):
 
     def updatePop(self):
         for i in range(len(self.npcs)):
-            self.npcs[i].check();
             if(self.npcs[i].getHP()<1):
                 self.npcs[i] = Person();
 
     def fullDisplay(self):
-        print("Details: ");
+        print("Monsters: ");
+        print("-----------");
         for i in self.npcs:
             print(i.getTitle() + ": " + str(i.getHP()) + "HP.");
 

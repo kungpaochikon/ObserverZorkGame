@@ -1,3 +1,4 @@
+#Author: Gary Fleming
 import abc;
 class Observer(object):
     __metaclas__ = abc.ABCMeta;

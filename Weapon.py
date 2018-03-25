@@ -1,3 +1,4 @@
+#Author: Gary Fleming
 import random;
 class Weapon():
     def __init__(self,modLower,modUpper,uses,title):
