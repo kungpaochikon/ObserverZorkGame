@@ -2,6 +2,14 @@
 import random;
 from Obs import Observer, Observable;
 from NPC import Person, Zombie, Vampire, Ghoul, Werewolf;
+
+'''
+Home class contains an arbitrary amount of NPCS
+is observed by neighborhood and observes NPCs.
+Gets updated by monsters and will update pop count
+as well as neighborhood population count when updated.
+'''
+
 class Home(Observable, Observer):
     def __init__(self):
         super().__init__();

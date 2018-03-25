@@ -2,6 +2,13 @@
 from Home import Home;
 from Obs import Observable, Observer;
 
+'''
+Neighborhood contains a 2d grid of homes.
+Observes homes and is observed by game.
+updates when home is update and essentially
+delivers the population change to the game.
+'''
+
 class Neighborhood(Observable, Observer):
     def __init__(self,row,col):
         super().__init__();

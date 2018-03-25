@@ -2,6 +2,13 @@
 from Actor import Actor;
 from Obs import Observable;
 
+'''
+NPC Class contains structure for all NPC types,
+inherits attributes from Actor and is observed
+by homes. Updates monster population count
+when hp is less than 0.
+'''
+
 class NPC(Actor, Observable):
 
     def __init__(self,title,hpLower,hpUpper,dmgLower,dmgUpper):

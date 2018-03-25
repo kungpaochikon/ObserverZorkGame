@@ -4,6 +4,12 @@ from Player import Player;
 import sys;
 from Obs import Observer;
 
+'''
+Game Class contains main loop and condition checks,
+instantiates all other necessary instances.
+Observes neighborhood.
+'''
+
 class Game(Observer):
     def __init__(self):
         self.running = True;
@@ -106,7 +112,9 @@ class Game(Observer):
                 print("        YOU LOSE!!!!     ");
                 print("!!!!!!!!!!!!!!!!!!!!!!!!!");
                 sys.exit();
-
+    #Updates allow monster count to not rely
+    #on looping through instances, and instead just
+    #work off of a decremented number.
     def update(self):
         self.monsterCount-=1;
         print("A monster has been restored to a person!");
